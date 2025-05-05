@@ -22,7 +22,7 @@ def extract_dependency_info():
             info["kokoro"] = {"version": kokoro_match.group(1)}
             kokoro_found = True
 
-        # Matches misaki[...] ==version or misaki==version
+        # Match misaki[...] ==version or misaki==version
         misaki_match = re.match(r"^misaki(?:\[.*?\])?==(.+)$", dep)
         if misaki_match:
             info["misaki"] = {"version": misaki_match.group(1)}
