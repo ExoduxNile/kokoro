@@ -43,6 +43,9 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+gpu = [
+    "torch==2.6.0+cu124",
+]
 cpu = [
     "torch==2.6.0",
 ]
@@ -59,17 +62,24 @@ test = [
 conflicts = [
     [
         { extra = "cpu" },
+        { extra = "gpu" },
     ],
 ]
 
 [tool.uv.sources]
 torch = [
     { index = "pytorch-cpu", extra = "cpu" },
+    { index = "pytorch-cuda", extra = "gpu" },
 ]
 
 [[tool.uv.index]]
 name = "pytorch-cpu"
 url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cuda"
+url = "https://download.pytorch.org/whl/cu124"
 explicit = true
 
 [build-system]
@@ -85,6 +95,3 @@ testpaths = ["api/tests", "ui/tests"]
 python_files = ["test_*.py"]
 addopts = "--cov=api --cov=ui --cov-report=term-missing --cov-config=.coveragerc --full-trace" 
 asyncio_mode = "auto"
-
-[tool.poetry.scripts]
-download-models = "docker.scripts.download_model:main"
