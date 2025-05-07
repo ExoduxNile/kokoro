@@ -33,7 +33,7 @@ class Settings(BaseSettings):
     sample_rate: int = 24000
     # Text Processing Settings
     target_min_tokens: int = 175  # Target minimum tokens per chunk
-    target_max_tokens: int = 250  # Target maximum tokens per chunk
+    target_max_tokens: int = 20000  # Target maximum tokens per chunk
     absolute_max_tokens: int = 450  # Absolute maximum tokens per chunk
     advanced_text_normalization: bool = True  # Preproesses the text before misiki
     voice_weight_normalization: bool = (
