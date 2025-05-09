@@ -1,0 +1,10 @@
+kokoro-onnx==0.3.9
+soundfile>=0.13.0
+fastapi>=0.109.0
+uvicorn>=0.27.0
+numpy>=2.0.0
+beautifulsoup4>=4.12.3
+ebooklib>=0.18
+pymupdf>=1.25.4
+pymupdf4llm>=0.0.17
+uvicorn[standard]

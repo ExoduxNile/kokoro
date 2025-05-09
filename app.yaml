@@ -1,0 +1,5 @@
+runtime: python312
+service: kokoro-tts
+entrypoint: bash start.sh
+env_variables:
+  PORT: 8080
