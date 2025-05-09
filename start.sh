@@ -26,7 +26,7 @@ if [ ! -f "models/config.json" ]; then
 fi
 
 # Verify you have voices files in the voices directory
-if [ ! -f "voices/voices-v1.0.bin" ]; then
+if [ ! -f "src/voices/v1_0" ]; then
     echo "Error: Missing voice files in voices directory" >&2
     exit 1
 fi

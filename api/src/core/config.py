@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     )
 
     # Container absolute paths
-    model_dir: str = "/app/api/src/models"  # Absolute path in container
+    model_dir: str = "/app/models"  # Absolute path in container
     voices_dir: str = "/app/api/src/voices/v1_0"  # Absolute path in container
 
     # Audio Settings
