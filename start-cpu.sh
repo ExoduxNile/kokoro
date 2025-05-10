@@ -19,7 +19,7 @@ pip install -r requirements.txt
 # Run FastAPI with CPU extras using uv run
 # Note: espeak may still require manual installation,
 uv pip install -e ".[cpu]"
-uv run --no-sync python docker/scripts/download_model.py --output api/src/models/v1_0
+uv run --no-sync python ./download_model.py --output api/src/models/v1_0
 
 # Apply the misaki patch to fix possible EspeakWrapper issue in older versions
 # echo "Applying misaki patch..."
