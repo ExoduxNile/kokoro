@@ -149,5 +149,12 @@ async def test_endpoint():
 
 
 if __name__ == "__main__":
-    #uvicorn.run("api.src.main:app", host=settings.host, port=settings.port, reload=True)
-    uvicorn.run(api.src.main:app, host='0.0.0.0', port=int(os.environ.get('PORT', $PORT)))
+    # Get port from Cloud Run's $PORT or default to 8080 for local development
+    port = int(os.environ.get("PORT", 8080))
+    
+    uvicorn.run(
+        "api.src.main:app",
+        host="0.0.0.0",  # Required for Cloud Run
+        port=port,       # Uses $PORT in production
+        log_level="info"
+    )
