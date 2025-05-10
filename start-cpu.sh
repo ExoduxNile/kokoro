@@ -13,6 +13,9 @@ export WEB_PLAYER_PATH=$PROJECT_ROOT/web
 # Set the espeak-ng data path to your location
 export ESPEAK_DATA_PATH=/usr/lib/x86_64-linux-gnu/espeak-ng-data
 
+# Install dependencies
+pip install -r requirements.txt
+
 # Run FastAPI with CPU extras using uv run
 # Note: espeak may still require manual installation,
 uv pip install -e ".[cpu]"

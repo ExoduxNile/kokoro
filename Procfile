@@ -1,1 +1,1 @@
-web: ./start-ok.sh
+web: ./start-cpu.sh
