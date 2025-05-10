@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     api_description: str = "API for text-to-speech generation using Kokoro"
     api_version: str = "1.0.0"
     host: str = "0.0.0.0"
-    port: int = 8880
+    port: int = 8080
 
     # Application Settings
     output_dir: str = "output"
