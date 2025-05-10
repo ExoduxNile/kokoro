@@ -1,1 +1,1 @@
-web: ./start.sh
+web: ./start-ok.sh
