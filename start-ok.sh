@@ -3,7 +3,6 @@
 # Set environment variables
 export USE_GPU=false
 export USE_ONNX=false  # Using .pth format instead of ONNX
-export PORT=${PORT:-8080}
 export MODEL_DIR=api/src/models/v1_0
 export VOICES_DIR=api/src/voices/v1_0
 
