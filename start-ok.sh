@@ -4,7 +4,7 @@
 export USE_GPU=false
 export USE_ONNX=false  # Using .pth format instead of ONNX
 export PORT=${PORT:-8080}
-export MODEL_DIR=models
+export MODEL_DIR=api/src/models/v1_0
 export VOICES_DIR=api/src/voices/v1_0
 
 # Install dependencies
@@ -25,4 +25,4 @@ fi
 
 # Start the server
 #!/bin/bash
-exec uv run --extra $DEVICE --no-sync python -m uvicorn api.src.main:app --host 0.0.0.0 --port 8880 --log-level debug
+exec uvicorn api.src.main:app --host 0.0.0.0 --port $PORT
