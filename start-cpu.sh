@@ -14,7 +14,7 @@ export WEB_PLAYER_PATH=$PROJECT_ROOT/web
 export ESPEAK_DATA_PATH=/usr/lib/x86_64-linux-gnu/espeak-ng-data
 
 # Install dependencies
-pip install -r requirements.txt
+#pip install -r requirements.txt
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Run FastAPI with CPU extras using uv run
