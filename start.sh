@@ -33,4 +33,4 @@ fi
 
 # Start the server
 #!/bin/bash
-uvicorn api.src.main:app --host 0.0.0.0 --port ${PORT:-8080}
+exec uv run --extra $DEVICE --no-sync python -m uvicorn api.src.main:app --host 0.0.0.0 --port 8880 --log-level debug
