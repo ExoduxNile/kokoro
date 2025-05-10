@@ -32,4 +32,5 @@ if [ ! -f "src/voices/v1_0" ]; then
 fi
 
 # Start the server
-uvicorn api.src.main:app --host 0.0.0.0 --port $PORT
+#!/bin/bash
+uvicorn api.src.main:app --host 0.0.0.0 --port ${PORT:-8080}
