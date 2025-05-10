@@ -20,7 +20,6 @@ fi
 if [ ! -f "api/src/voices/v1_0" ]; then
     echo "Error: Missing voice files in voices directory" >&2
     exit 1
-fi
 
 # Start the server
 #!/bin/bash
