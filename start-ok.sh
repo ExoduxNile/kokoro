@@ -10,19 +10,11 @@ export VOICES_DIR=api/src/voices/v1_0
 # Install dependencies
 pip install -r requirements.txt
 
-# Download .pth model from GitHub release
-if [ ! -f "models/kokoro-v1_0.pth" ]; then
-    mkdir -p models
-    echo "Downloading model file..."
-    curl -L -o models/kokoro-v1_0.pth \
-        "https://github.com/remsky/Kokoro-FastAPI/releases/download/v0.1.4/config.json"
-fi
-
 # Download config file
-if [ ! -f "models/config.json" ]; then
+if [ ! -f "api/src/models/v1_0/config.json" ]; then
     echo "Downloading config file..."
-    curl -L -o models/config.json \
-        "https://github.com/remsky/Kokoro-FastAPI/releases/download/v1.4/config.json"
+    curl -L -o api/src/models/v1_0/config.json \
+        "https://github.com/remsky/Kokoro-FastAPI/releases/download/v0.1.4/kokoro-v1_0.pth"
 fi
 
 # Verify you have voices files in the voices directory
