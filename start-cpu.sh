@@ -4,7 +4,7 @@ set -euo pipefail  # Enable strict mode
 # Set environment variables
 export USE_GPU=false
 export USE_ONNX=false
-export PORT=${PORT:-8080}  # Cloud Run provides $PORT automatically
+export PORT=${PORT}  # Cloud Run provides $PORT automatically
 export PYTHONPATH=$(pwd):$(pwd)/api
 export MODEL_DIR=api/src/models/v1_0
 export VOICES_DIR=api/src/voices/v1_0
