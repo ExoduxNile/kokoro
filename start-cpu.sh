@@ -20,7 +20,8 @@ export ESPEAK_DATA_PATH=/usr/lib/x86_64-linux-gnu/espeak-ng-data
 # Run FastAPI with CPU extras using uv run
 # Note: espeak may still require manual installation,
 pip install -e ".[cpu]"
-python -m docker.scripts.download_model --output api\src\models\v1_0
+
+python -m docker.scripts.download_model --output api/src/models/v1_0
 # Apply the misaki patch to fix possible EspeakWrapper issue in older versions
 # echo "Applying misaki patch..."
 # python scripts/fix_misaki.py
