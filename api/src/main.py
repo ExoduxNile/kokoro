@@ -76,7 +76,7 @@ async def lifespan(app: FastAPI):
 {boundary}
 
     ╔═╗┌─┐┌─┐┌┬┐
-    ╠╣ ├─┤└─┐ │ 
+    ╠╣ ├─┤└─┐ │
     ╚  ┴ ┴└─┘ ┴
     ╦╔═┌─┐┬┌─┌─┐
     ╠╩╗│ │├┴┐│ │
@@ -148,13 +148,13 @@ async def test_endpoint():
     return {"status": "ok"}
 
 
-if __name__ == "__main__":
-    # Get port from Cloud Run's $PORT or default to 8080 for local development
-    port = int(os.environ.get("PORT", $PORT))
-    
-    uvicorn.run(
-        "api.src.main:app",
-        host="0.0.0.0",  # Required for Cloud Run
-        port=$PORT,       # Uses $PORT in production
-        log_level="info"
-    )
+# if __name__ == "__main__":
+#     # Get port from Cloud Run's $PORT or default to 8080 for local development
+#     port = int(os.environ.get("PORT", $PORT))
+
+#     uvicorn.run(
+#         "api.src.main:app",
+#         host="0.0.0.0",  # Required for Cloud Run
+#         port=$PORT,       # Uses $PORT in production
+#         log_level="info"
+#     )
