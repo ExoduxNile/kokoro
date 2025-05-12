@@ -1,17 +1,16 @@
-version: '3.8'
+version: '3.3'
 
 services:
   kokoro-tts:
     build:
-      context: ../..
-      dockerfile: Dockerfile  # Explicit path to Dockerfile
+      context: .
+      dockerfile: Dockerfile
     volumes:
-      - ../../api:/app/api
+      - ./api:/app/api
     ports:
       - "8880:8880"
     environment:
       - PYTHONPATH=/app:/app/api
-      # ONNX Optimization Settings
       - ONNX_NUM_THREADS=8
       - ONNX_INTER_OP_THREADS=4
       - ONNX_EXECUTION_MODE=parallel
