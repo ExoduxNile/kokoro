@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     api_description: str = "API for text-to-speech generation using Kokoro"
     api_version: str = "1.0.0"
     host: str = "0.0.0.0"
-    port: $PORT
+    port: int = 8880
 
     # Application Settings
     output_dir: str = "output"
@@ -26,15 +26,15 @@ class Settings(BaseSettings):
     )
 
     # Container absolute paths
-    model_dir: str = "/app/models"  # Absolute path in container
+    model_dir: str = "/app/api/src/models"  # Absolute path in container
     voices_dir: str = "/app/api/src/voices/v1_0"  # Absolute path in container
 
     # Audio Settings
     sample_rate: int = 24000
     # Text Processing Settings
     target_min_tokens: int = 175  # Target minimum tokens per chunk
-    target_max_tokens: int = 30000  # Target maximum tokens per chunk
-    absolute_max_tokens: int = 45000  # Absolute maximum tokens per chunk
+    target_max_tokens: int = 250  # Target maximum tokens per chunk
+    absolute_max_tokens: int = 450  # Absolute maximum tokens per chunk
     advanced_text_normalization: bool = True  # Preproesses the text before misiki
     voice_weight_normalization: bool = (
         True  # Normalize the voice weights so they add up to 1
@@ -59,14 +59,12 @@ class Settings(BaseSettings):
 
     # Temp File Settings for WEB Ui
     temp_file_dir: str = "api/temp_files"  # Directory for temporary audio files (relative to project root)
-    max_temp_dir_size_mb: int = 10048  # Maximum size of temp directory (2GB)
+    max_temp_dir_size_mb: int = 2048  # Maximum size of temp directory (2GB)
     max_temp_dir_age_hours: int = 1  # Remove temp files older than 1 hour
-    max_temp_dir_count: int = 100000  # Maximum number of temp files to keep
+    max_temp_dir_count: int = 3  # Maximum number of temp files to keep
 
     class Config:
         env_file = ".env"
-        env_prefix = ""  # Cloud Run's PORT env var doesn't have a prefix
-        case_sensitive = True  # Cloud Run uses uppercase PORT
 
     def get_device(self) -> str:
         """Get the appropriate device based on settings and availability"""
